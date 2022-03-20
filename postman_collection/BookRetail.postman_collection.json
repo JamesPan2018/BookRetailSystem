@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "595b38bf-4b95-4fde-a215-4f732c267527",
+		"name": "BookRetail",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MemberRequestCollections",
+			"item": [
+				{
+					"name": "create new member",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"MemberA\",\r\n    \"point\": 12.23,\r\n    \"memberType\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/member/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"member",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get member by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/member/getMember?memberId=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"member",
+								"getMember"
+							],
+							"query": [
+								{
+									"key": "memberId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderRequestCollections",
+			"item": [
+				{
+					"name": "submit new order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"memberId\": 2,\r\n    \"books\": [\r\n        {\r\n            \"name\": \"Book1\",\r\n            \"quantity\":10,\r\n            \"price\":10.01,\r\n            \"description\": \"This is Book1\"\r\n        },\r\n        {\r\n            \"name\": \"Book2\",\r\n            \"quantity\":10,\r\n            \"price\":11.11,\r\n            \"description\": \"This is Book2\"\r\n        },        \r\n        {\r\n            \"name\": \"Book3\",\r\n            \"quantity\":10,\r\n            \"price\":12.21,\r\n            \"description\": \"This is Book3\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/order/submitOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"submitOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "qurey orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/queryOrders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"queryOrders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
